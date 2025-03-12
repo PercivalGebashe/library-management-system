@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.percivalgebashe</groupId>
-	<artifactId>server-discovery</artifactId>
+	<artifactId>service-discovery</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>server-discovery</name>
 	<description>server-discovery</description>
