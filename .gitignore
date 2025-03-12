@@ -70,37 +70,37 @@ config-server/!**/src/test/**/build/
 config-server/.vscode/
 
 
-# server-discovery ignore
-server-discovery/HELP.md
-server-discovery/target/
-server-discovery/!.mvn/wrapper/maven-wrapper.jar
-server-discovery/!**/src/main/**/target/
-server-discovery/!**/src/test/**/target/
+# service-discovery ignore
+service-discovery/HELP.md
+service-discovery/target/
+service-discovery/!.mvn/wrapper/maven-wrapper.jar
+service-discovery/!**/src/main/**/target/
+service-discovery/!**/src/test/**/target/
 
 ### STS ###
-server-discovery/.apt_generated
-server-discovery/.classpath
-server-discovery/.factorypath
-server-discovery/.project
-server-discovery/.settings
-server-discovery/.springBeans
-server-discovery/.sts4-cache
+service-discovery/.apt_generated
+service-discovery/.classpath
+service-discovery/.factorypath
+service-discovery/.project
+service-discovery/.settings
+service-discovery/.springBeans
+service-discovery/.sts4-cache
 
 ### IntelliJ IDEA ###
-server-discovery/.idea
-server-discovery/*.iws
-server-discovery/*.iml
-server-discovery/*.ipr
+service-discovery/.idea
+service-discovery/*.iws
+service-discovery/*.iml
+service-discovery/*.ipr
 
 ### NetBeans ###
-server-discovery/nbproject/private/
-server-discovery/nbbuild/
-server-discovery/dist/
-server-discovery/nbdist/
-server-discovery/.nb-gradle/
-server-discovery/build/
-server-discovery/!**/src/main/**/build/
-server-discovery/!**/src/test/**/build/
+service-discovery/nbproject/private/
+service-discovery/nbbuild/
+service-discovery/dist/
+service-discovery/nbdist/
+service-discovery/.nb-gradle/
+service-discovery/build/
+service-discovery/!**/src/main/**/build/
+service-discovery/!**/src/test/**/build/
 
 ### VS Code ###
-server-discovery/.vscode/
+service-discovery/.vscode/
