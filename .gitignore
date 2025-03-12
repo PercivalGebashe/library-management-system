@@ -104,3 +104,39 @@ service-discovery/!**/src/test/**/build/
 
 ### VS Code ###
 service-discovery/.vscode/
+
+
+# organisation ignore
+organisation/HELP.md
+organisation/target/
+organisation/!.mvn/wrapper/maven-wrapper.jar
+organisation/!**/src/main/**/target/
+organisation/!**/src/test/**/target/
+
+### STS ###
+organisation/.apt_generated
+organisation/.classpath
+organisation/.factorypath
+organisation/.project
+organisation/.settings
+organisation/.springBeans
+organisation/.sts4-cache
+
+### IntelliJ IDEA ###
+organisation/.idea
+organisation/*.iws
+organisation/*.iml
+organisation/*.ipr
+
+### NetBeans ###
+organisation/nbproject/private/
+organisation/nbbuild/
+organisation/dist/
+organisation/nbdist/
+organisation/.nb-gradle/
+organisation/build/
+organisation/!**/src/main/**/build/
+organisation/!**/src/test/**/build/
+
+### VS Code ###
+organisation/.vscode/
