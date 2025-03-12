@@ -1,0 +1,106 @@
+# api-gateway ignore
+api-gateway/HELP.md
+api-gateway/target/
+api-gateway/!.mvn/wrapper/maven-wrapper.jar
+api-gateway/!**/src/main/**/target/
+api-gateway/!**/src/test/**/target/
+
+### STS ###
+api-gateway/.apt_generated
+api-gateway/.classpath
+api-gateway/.factorypath
+api-gateway/.project
+api-gateway/.settings
+api-gateway/.springBeans
+api-gateway/.sts4-cache
+
+### IntelliJ IDEA ###
+api-gateway/.idea
+api-gateway/*.iws
+api-gateway/*.iml
+api-gateway/*.ipr
+
+### NetBeans ###
+api-gateway/nbproject/private/
+api-gateway/nbbuild/
+api-gateway/dist/
+api-gateway/nbdist/
+api-gateway/.nb-gradle/
+api-gateway/build/
+api-gateway/!**/src/main/**/build/
+api-gateway/!**/src/test/**/build/
+
+### VS Code ###
+api-gateway/.vscode/
+
+
+# config-server ignore
+config-server/HELP.md
+config-server/target/
+config-server/!.mvn/wrapper/maven-wrapper.jar
+config-server/!**/src/main/**/target/
+config-server/!**/src/test/**/target/
+
+### STS ###
+config-server/.apt_generated
+config-server/.classpath
+config-server/.factorypath
+config-server/.project
+config-server/.settings
+config-server/.springBeans
+config-server/.sts4-cache
+
+### IntelliJ IDEA ###
+config-server/.idea
+config-server/*.iws
+config-server/*.iml
+config-server/*.ipr
+
+### NetBeans ###
+config-server/nbproject/private/
+config-server/nbbuild/
+config-server/dist/
+config-server/nbdist/
+config-server/.nb-gradle/
+config-server/build/
+config-server/!**/src/main/**/build/
+config-server/!**/src/test/**/build/
+
+### VS Code ###
+config-server/.vscode/
+
+
+# server-discovery ignore
+server-discovery/HELP.md
+server-discovery/target/
+server-discovery/!.mvn/wrapper/maven-wrapper.jar
+server-discovery/!**/src/main/**/target/
+server-discovery/!**/src/test/**/target/
+
+### STS ###
+server-discovery/.apt_generated
+server-discovery/.classpath
+server-discovery/.factorypath
+server-discovery/.project
+server-discovery/.settings
+server-discovery/.springBeans
+server-discovery/.sts4-cache
+
+### IntelliJ IDEA ###
+server-discovery/.idea
+server-discovery/*.iws
+server-discovery/*.iml
+server-discovery/*.ipr
+
+### NetBeans ###
+server-discovery/nbproject/private/
+server-discovery/nbbuild/
+server-discovery/dist/
+server-discovery/nbdist/
+server-discovery/.nb-gradle/
+server-discovery/build/
+server-discovery/!**/src/main/**/build/
+server-discovery/!**/src/test/**/build/
+
+### VS Code ###
+server-discovery/.vscode/
