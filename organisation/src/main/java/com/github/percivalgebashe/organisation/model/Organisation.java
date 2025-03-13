@@ -1,0 +1,28 @@
+package com.github.percivalgebashe.organisation.model;
+
+import com.github.percivalgebashe.organisation.enums.OrgStatus;
+import com.github.percivalgebashe.organisation.enums.OrgType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+
+import java.io.Serial;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class Organisation {
+    @Id
+    private UUID id;
+    private String name;
+    private String address;
+    private String phone;
+    private String email;
+    private OrgStatus status;
+    private OrgType type;
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
+}
