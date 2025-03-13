@@ -15,7 +15,7 @@ import java.util.UUID;
 public class OrganisationjbdcDAO implements DAO<Organisation> {
 
     private static final Logger log = LoggerFactory.getLogger(OrganisationjbdcDAO.class);
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     OrganisationjbdcDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -23,10 +23,10 @@ public class OrganisationjbdcDAO implements DAO<Organisation> {
 
     @Override
     public List<Organisation> getAll() {
-        String sql = "select * from organisations";
+        String sql = "select * from organizations";
         try {
             List<Organisation> orgs = jdbcTemplate.query(sql,new OrganisationRowMapper());
-            log.info("Results Found: " + orgs.size());
+            log.info("Results Found: {}", orgs.size());
             return orgs;
         }catch (DataAccessException e){
             log.error(e.getMessage());
@@ -38,7 +38,7 @@ public class OrganisationjbdcDAO implements DAO<Organisation> {
 
     @Override
     public void create(Organisation organisation) {
-        String sql = "INSERT INTO organisations (name, address, phone_number, email, status, created_at, updated_at)" +
+        String sql = "INSERT INTO organizations (name, address, phone_number, email, status, created_at, updated_at)" +
                 " values (?, ?, ?, ?, ?, ?, ?);";
 
         try {
@@ -52,9 +52,9 @@ public class OrganisationjbdcDAO implements DAO<Organisation> {
                     organisation.getCreated_at(),
                     organisation.getUpdated_at());
             if (affectedRows == 1) {
-                log.info(String.format("%s created", organisation.getName()));
+                log.info("{} created", organisation.getName());
             }else {
-                log.error(String.format("%s could not be created", organisation.getName()));
+                log.error("{} could not be created", organisation.getName());
             }
         }catch (DataAccessException e){
             log.error(e.getMessage());
@@ -64,12 +64,12 @@ public class OrganisationjbdcDAO implements DAO<Organisation> {
 
     @Override
     public Optional<Organisation> getById(UUID id) {
-        String sql = "SELECT * FROM organisations WHERE id = ?";
-        Organisation organisation = null;
+        String sql = "SELECT * FROM organizations WHERE id = ?";
+        Organisation organisation;
         try {
             organisation = jdbcTemplate.queryForObject(sql, new OrganisationRowMapper(), id);
             if (organisation == null){
-                log.info("Could not find organisation with id", id);
+                log.info("{} Could not find organisation with id", id);
             }
         }catch (DataAccessException e){
             log.error(e.getMessage());
@@ -80,7 +80,7 @@ public class OrganisationjbdcDAO implements DAO<Organisation> {
 
     @Override
     public void update(Organisation organisation) {
-        String sql = "UPDATE organisation SET name = ?, address = ?, phone_number = ?, email = ?, status = ?, updated_at = ? " +
+        String sql = "UPDATE organizations SET name = ?, address = ?, phone_number = ?, email = ?, status = ?, updated_at = ? " +
                 " WHERE id = ?";
         try {
             jdbcTemplate.update(sql,
@@ -100,7 +100,7 @@ public class OrganisationjbdcDAO implements DAO<Organisation> {
 
     @Override
     public void delete(UUID id) {
-        String sql = "DELETE FROM organisations WHERE id = ?";
+        String sql = "DELETE FROM organizations WHERE id = ?";
 
         try {
             jdbcTemplate.update(sql, id);
