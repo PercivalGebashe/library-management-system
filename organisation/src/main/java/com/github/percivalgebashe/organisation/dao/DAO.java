@@ -10,9 +10,9 @@ public interface DAO<T> {
 
     void create(T t);
 
-    Optional<T> getById(UUID id);
+    Optional<T> getById(String id);
 
     void update(T t);
 
-    void delete(UUID id);
+    void delete(String id);
 }

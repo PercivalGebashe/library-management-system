@@ -3,10 +3,7 @@ package com.github.percivalgebashe.organisation.service;
 import com.github.percivalgebashe.organisation.exception.ResourceNotFoundException;
 import com.github.percivalgebashe.organisation.model.Organisation;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 public interface OrganisationCRUDService {
 
@@ -14,9 +11,9 @@ public interface OrganisationCRUDService {
 
     void create(Organisation organisation);
 
-    Organisation getById(UUID id) throws ResourceNotFoundException;
+    Organisation getById(String id) throws ResourceNotFoundException;
 
     void update(Organisation organisation);
 
-    void delete(UUID id);
+    void delete(String id);
 }

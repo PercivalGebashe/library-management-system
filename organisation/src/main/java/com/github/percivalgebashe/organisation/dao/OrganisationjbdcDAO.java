@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Component
 public class OrganisationjbdcDAO implements DAO<Organisation> {
@@ -63,7 +62,7 @@ public class OrganisationjbdcDAO implements DAO<Organisation> {
     }
 
     @Override
-    public Optional<Organisation> getById(UUID id) {
+    public Optional<Organisation> getById(String id) {
         String sql = "SELECT * FROM organizations WHERE id = ?";
         Organisation organisation;
         try {
@@ -99,7 +98,7 @@ public class OrganisationjbdcDAO implements DAO<Organisation> {
     }
 
     @Override
-    public void delete(UUID id) {
+    public void delete(String id) {
         String sql = "DELETE FROM organizations WHERE id = ?";
 
         try {

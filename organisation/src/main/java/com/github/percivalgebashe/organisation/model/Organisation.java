@@ -7,22 +7,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
-import java.io.Serial;
-import java.time.LocalDateTime;
-import java.util.UUID;
+import java.sql.Timestamp;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Organisation {
     @Id
-    private UUID id;
+    private String id;
     private String name;
     private String address;
     private String phone;
     private String email;
     private OrgStatus status;
     private OrgType type;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+    private Timestamp created_at;
+    private Timestamp updated_at;
 }

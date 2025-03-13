@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/organisations")
@@ -32,7 +31,7 @@ public class OrganisationCRUDRestController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Organisation> getById(@PathVariable UUID id){
+    public ResponseEntity<Organisation> getById(@PathVariable String id){
         return new ResponseEntity<>(service.getById(id), HttpStatus.OK);
     }
 }

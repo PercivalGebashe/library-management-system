@@ -29,7 +29,7 @@ public class OrganisationCRUDServiceImpl implements OrganisationCRUDService {
     }
 
     @Override
-    public Organisation getById(UUID id) throws ResourceNotFoundException {
+    public Organisation getById(String id) throws ResourceNotFoundException {
         return organisationDao.getById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(String.format("No organisation found with %s: ", id)));
     }
@@ -40,7 +40,7 @@ public class OrganisationCRUDServiceImpl implements OrganisationCRUDService {
     }
 
     @Override
-    public void delete(UUID id) {
+    public void delete(String id) {
         try {
             organisationDao.delete(id);
         }catch (DataAccessException e){

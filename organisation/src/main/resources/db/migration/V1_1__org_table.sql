@@ -1,5 +1,5 @@
 CREATE TABLE organizations (
-    id SERIAL PRIMARY KEY,
+    id VARCHAR(26) PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE,
     address TEXT,
     phone_number VARCHAR(20),
@@ -8,3 +8,5 @@ CREATE TABLE organizations (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE INDEX idx_organization_id ON organizations(id);
