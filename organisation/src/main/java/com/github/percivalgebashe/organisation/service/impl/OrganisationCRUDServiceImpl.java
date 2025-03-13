@@ -25,6 +25,7 @@ public class OrganisationCRUDServiceImpl implements OrganisationCRUDService {
 
     @Override
     public void create(Organisation organisation) {
+        organisation.setId(generateId());
         organisationDao.create(organisation);
     }
 
@@ -46,5 +47,9 @@ public class OrganisationCRUDServiceImpl implements OrganisationCRUDService {
         }catch (DataAccessException e){
             throw new ResourceNotFoundException(String.format("No organisation found with %s: ", id));
         }
+    }
+
+    private String generateId() {
+        return UUID.randomUUID().toString();
     }
 }
