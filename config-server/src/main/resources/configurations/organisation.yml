@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: organisation
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/organisation
+    username: postgres
+    password: Password@123
+
+eureka:
+  instance:
+    hostname: localhost
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+    healthcheck:
+      enabled: true
+
+server:
+  port: 8002
