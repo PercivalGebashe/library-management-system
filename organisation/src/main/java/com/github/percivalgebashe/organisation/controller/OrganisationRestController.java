@@ -6,10 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +30,23 @@ public class OrganisationCRUDRestController {
     @GetMapping("{id}")
     public ResponseEntity<Organisation> getById(@PathVariable String id){
         return new ResponseEntity<>(service.getById(id), HttpStatus.OK);
+    }
+
+    @PostMapping(consumes = "application/json")
+    public ResponseEntity<Organisation> create(@RequestBody Organisation organisation){
+        service.create(organisation);
+        return new ResponseEntity<>(organisation, HttpStatus.CREATED);
+    }
+
+    @PutMapping(consumes = "application/json")
+    public ResponseEntity update(@RequestBody Organisation organisation){
+        service.update(organisation);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @DeleteMapping("{id")
+    public ResponseEntity deleteById(@PathVariable String id){
+        service.delete(id);
+        return new ResponseEntity(HttpStatus.OK);
     }
 }
