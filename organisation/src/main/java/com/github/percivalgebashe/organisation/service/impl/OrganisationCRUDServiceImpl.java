@@ -25,8 +25,13 @@ public class OrganisationCRUDServiceImpl implements OrganisationCRUDService {
 
     @Override
     public void create(Organisation organisation) {
-        organisation.setId(generateId());
-        organisationDao.create(organisation);
+
+        try {
+            organisation.setId(generateId());
+            organisationDao.create(organisation);
+        } catch (DataAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -41,7 +46,7 @@ public class OrganisationCRUDServiceImpl implements OrganisationCRUDService {
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(String id) throws ResourceNotFoundException {
         try {
             organisationDao.delete(id);
         }catch (DataAccessException e){

@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 public class OrganisationRowMapper implements RowMapper<Organisation> {
 
@@ -25,6 +24,5 @@ public class OrganisationRowMapper implements RowMapper<Organisation> {
         organisation.setUpdated_at(Timestamp.valueOf(rs.getString("updated_at")));
 
         return organisation;
-
     }
 }

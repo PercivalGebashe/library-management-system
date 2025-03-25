@@ -15,5 +15,5 @@ public interface OrganisationCRUDService {
 
     void update(Organisation organisation);
 
-    void delete(String id);
+    void delete(String id) throws ResourceNotFoundException;
 }

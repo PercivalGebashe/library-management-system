@@ -12,12 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/organisations")
-public class OrganisationCRUDRestController {
+public class OrganisationRestController {
 
     private final OrganisationCRUDService service;
-    private Logger logger = LoggerFactory.getLogger(OrganisationCRUDRestController.class);
+    private Logger logger = LoggerFactory.getLogger(OrganisationRestController.class);
 
-    OrganisationCRUDRestController(OrganisationCRUDService service){
+    OrganisationRestController(OrganisationCRUDService service){
         this.service = service;
     }
 
@@ -32,13 +32,13 @@ public class OrganisationCRUDRestController {
         return new ResponseEntity<>(service.getById(id), HttpStatus.OK);
     }
 
-    @PostMapping(consumes = "application/json")
+    @PostMapping(value = "/register", consumes = "application/json")
     public ResponseEntity<Organisation> create(@RequestBody Organisation organisation){
         service.create(organisation);
         return new ResponseEntity<>(organisation, HttpStatus.CREATED);
     }
 
-    @PutMapping(consumes = "application/json")
+    @PutMapping(value = "/update", consumes = "application/json")
     public ResponseEntity update(@RequestBody Organisation organisation){
         service.update(organisation);
         return new ResponseEntity(HttpStatus.OK);
