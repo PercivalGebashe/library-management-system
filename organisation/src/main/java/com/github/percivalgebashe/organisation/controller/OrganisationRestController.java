@@ -44,7 +44,7 @@ public class OrganisationRestController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @DeleteMapping("{id")
+    @DeleteMapping("{id}")
     public ResponseEntity deleteById(@PathVariable String id){
         service.delete(id);
         return new ResponseEntity(HttpStatus.OK);
