@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      override-system-properties: false
+
+eureka:
+  instance:
+    hostname: localhost
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+    healthcheck:
+      enabled: true
