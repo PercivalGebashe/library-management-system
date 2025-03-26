@@ -37,12 +37,21 @@ Edit `application.yml` in the configuration files on the config server with your
 ```yaml
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/organisation
-    username: root
-    password: Password@123
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: your_username
+    password: your_password
   flyway:
     enabled: true
+```
+If the database does not exist, create it manually by running:
+```sql
+CREATE DATABASE <your_database>;
+```
+Then update the connection URL:
+```yaml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/<your_database>
 ```
 ### 3️⃣ Build and Run
 ```bash
