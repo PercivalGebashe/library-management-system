@@ -20,6 +20,15 @@
         </processorPath>
         <module name="organisation" />
       </profile>
+      <profile name="Annotation profile for registration-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="registration-service" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -27,6 +36,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="organisation" options="-parameters" />
+      <module name="registration-service" options="-parameters" />
       <module name="service-discovery" options="-parameters" />
     </option>
   </component>
